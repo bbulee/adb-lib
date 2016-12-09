@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import fengzibin.adb.protocal.ICommands;
+import org.fengzibin.adb.protocol.ICommands;
 
 public class MyTest {
 
