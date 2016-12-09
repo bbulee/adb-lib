@@ -6,6 +6,9 @@ import java.io.DataOutputStream;
 * @author fengzibin
 */
 public interface Device {
+	enum Status{
+		
+	}
 	
 	public Result shell(String cmd, String... args);
 	
