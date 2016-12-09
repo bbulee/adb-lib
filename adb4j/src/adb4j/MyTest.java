@@ -15,8 +15,8 @@ public class MyTest {
 		Socket as = new Socket("127.0.0.1",5037);
 		InputStream is =as.getInputStream();
 		OutputStream os = as.getOutputStream();
-		os.write(new String("0012host:transport-usb").getBytes("UTF-8"));
-		os.write(new String("000Chost:devices").getBytes("UTF-8"));
+		os.write(new String("0014host-usb:get-product").getBytes("UTF-8"));
+		//os.write(new String("000Chost:devices").getBytes("UTF-8"));
 		//os.write(new String("000Cframebuffer:").getBytes("UTF-8"));
 		int data;
 		StringBuffer sb = new StringBuffer();
