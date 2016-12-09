@@ -1,4 +1,4 @@
-package org.adb4j.protocol;
+package fengzibin.adb.protocal;
 
 /**
  * @author windboy E-mail: 136464153@qq.com

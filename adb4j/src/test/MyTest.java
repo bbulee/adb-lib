@@ -1,4 +1,4 @@
-package adb4j;
+package test;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import org.adb4j.protocol.ICommands;
+import fengzibin.adb.protocal.ICommands;
 
 public class MyTest {
 

@@ -1,6 +1,6 @@
-package org.adb4j.clients;
+package fengzibin.adb4j.client;
 
-import org.adb4j.protocol.IServices;
+import fengzibin.adb.protocal.IServices;
 
 /** 
 * @author windboy E-mail: 136464153@qq.com
