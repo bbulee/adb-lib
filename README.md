@@ -1,2 +1,2 @@
-# adb4j
-Adb client for java.
+# adb library
+Provide Java/Python/Javascript implementation for adb clients 
