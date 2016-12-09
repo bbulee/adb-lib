@@ -6,17 +6,17 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.fengzibin.adb.ADB;
-import org.fengzibin.adb.Device;
-import org.fengzibin.adb.Result;
+import org.fengzibin.adb.IADB;
+import org.fengzibin.adb.IDevice;
 import org.fengzibin.adb.util.Utility;
 
 /**
  * @author fengzibin
  */
-public final class ADBClient implements ADB {
+public final class ADBClient implements IADB {
 
 	SocketAddress host;
 	int timeout = 6000;
@@ -41,11 +41,20 @@ public final class ADBClient implements ADB {
 	}
 
 	@Override
-	public List<Device> devices() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<IDevice> devices() {
+		byte[] bytes = send("host:devices");
+		Result ret = new Result();
+		if (ret.verify(bytes)) {
+
+		}
+		return ret.parseDevice();
 	}
 
+	/**
+	 * 
+	 * @param cmd
+	 * @return
+	 */
 	private byte[] send(String cmd) {
 		socket = new Socket();
 		try {

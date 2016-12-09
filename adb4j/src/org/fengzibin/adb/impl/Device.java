@@ -3,12 +3,12 @@ package org.fengzibin.adb.impl;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
-import org.fengzibin.adb.Result;
+import org.fengzibin.adb.IResult;
 
 /**
  * @author fengzibin
  */
-public abstract class Device implements org.fengzibin.adb.Device {
+public abstract class Device implements org.fengzibin.adb.IDevice {
 
 	private String serialNumber;
 	private Status status;
@@ -19,13 +19,13 @@ public abstract class Device implements org.fengzibin.adb.Device {
 	}
 
 	@Override
-	public Result shell(String cmd, String... args) {
+	public IResult shell(String cmd, String... args) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Result shell(DataInputStream dis, DataOutputStream dos) {
+	public IResult shell(DataInputStream dis, DataOutputStream dos) {
 		// TODO Auto-generated method stub
 		return null;
 	}

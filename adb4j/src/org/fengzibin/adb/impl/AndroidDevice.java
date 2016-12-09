@@ -3,7 +3,7 @@ package org.fengzibin.adb.impl;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
-import org.fengzibin.adb.Result;
+import org.fengzibin.adb.IResult;
 
 /** 
 * @author fengzibin
