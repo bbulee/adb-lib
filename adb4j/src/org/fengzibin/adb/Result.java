@@ -1,3 +1,4 @@
+package org.fengzibin.adb;
 /** 
 * @author fengzibin
 */

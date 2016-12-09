@@ -1,3 +1,4 @@
+package org.fengzibin.adb;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
