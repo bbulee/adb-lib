@@ -8,7 +8,7 @@ import java.io.DataOutputStream;
  */
 public interface IDevice {
 	enum Status {
-
+device;
 	}
 
 	public IResult shell(String cmd, String... args);

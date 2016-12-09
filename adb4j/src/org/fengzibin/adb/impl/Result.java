@@ -1,5 +1,6 @@
 package org.fengzibin.adb.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.fengzibin.adb.IDevice;
@@ -22,15 +23,24 @@ public final class Result implements org.fengzibin.adb.IResult {
 				status = false;
 			msgBody = new byte[bytes.length - 8];
 			System.arraycopy(bytes, 8, msgBody, 0, bytes.length - 8);
-			return true;
+			
 		} else {
-			return false;
+			msgBody="error message received! ".getBytes();
+			
 		}
-
+		return status;
 	}
 
 	public List<IDevice> parseDevice(){
-		return null;
+		ArrayList<IDevice> list= new ArrayList<IDevice>();
+		String body =new String(msgBody);
+		String[] line = body.split("\n");
+		for(int i =0;i<line.length;i++){
+			String[] pro = line[i].split("\t");
+			list.add(new AndroidDevice(pro[i],IDevice.Status.device));
+		}
+		
+		return list;
 	}
 
 }
