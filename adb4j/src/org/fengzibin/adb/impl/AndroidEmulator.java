@@ -10,9 +10,8 @@ import org.fengzibin.adb.IResult;
 */
 public final class AndroidEmulator extends Device {
 
-	private AndroidEmulator(String serialNumber, Status status) {
+	AndroidEmulator(String serialNumber, Status status) {
 		super(serialNumber, status);
-		// TODO Auto-generated constructor stub
 	}
 
 	

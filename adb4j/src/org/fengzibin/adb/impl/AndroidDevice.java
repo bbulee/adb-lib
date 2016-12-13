@@ -10,9 +10,8 @@ import org.fengzibin.adb.IResult;
 */
 public final class AndroidDevice extends Device {
 
-	public AndroidDevice(String serialNumber, Status status) {
+	AndroidDevice(String serialNumber, Status status) {
 		super(serialNumber, status);
-		// TODO Auto-generated constructor stub
 	}
 
 }
