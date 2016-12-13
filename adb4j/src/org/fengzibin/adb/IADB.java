@@ -9,9 +9,22 @@ public interface IADB {
 
 	public void setHost(String hostIp, int port);
 
-	public IResult version();
+	/**
+	 * get adb version
+	 * @return
+	 */
+	public String version();
 
-	public IResult kill();
+	/**
+	 * kill adb-server
+	 * @return
+	 */
+	public void kill();
 
+	
+	/**
+	 * list all devices attached
+	 * @return
+	 */
 	public List<IDevice> devices();
 }

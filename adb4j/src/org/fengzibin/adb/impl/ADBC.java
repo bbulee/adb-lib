@@ -32,21 +32,19 @@ public final class ADBC implements IADB {
 	}
 
 	@Override
-	public Result version() {
+	public String version() {
 		byte[] bytes = send(ICommands.HOST_VERSION);
-		System.out.println(new String(bytes));
-		return null;
+		return new String(bytes);
 	}
 
 	@Override
-	public Result kill() {
-		// TODO Auto-generated method stub
-		return null;
+	public void kill() {
+		
 	}
 
 	@Override
 	public List<IDevice> devices() {
-		byte[] bytes = send("host:devices");
+		byte[] bytes = send(ICommands.HOST_DEVICES);
 		Result ret = new Result();
 		if (ret.verify(bytes)) {
 
