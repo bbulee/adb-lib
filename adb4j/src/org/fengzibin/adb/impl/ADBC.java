@@ -73,7 +73,7 @@ public final class ADBC implements IADB {
 		try {
 			dos = new DataOutputStream(socket.getOutputStream());
 			dis = new DataInputStream(socket.getInputStream());
-			dos.writeBytes(Utility.getCMDLengthStr(cmd) + cmd);
+			dos.writeBytes(Utility.getCmdPrefix(cmd) + cmd);
 			int b;
 			while ((b = dis.read()) != -1) {
 				ret.append((char) b);
