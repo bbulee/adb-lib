@@ -1,23 +1,19 @@
 package test;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.List;
 
 import org.fengzibin.adb.IADB;
 import org.fengzibin.adb.IDevice;
-import org.fengzibin.adb.impl.ADBClient;
-import org.fengzibin.adb.protocol.ICommands;
+import org.fengzibin.adb.impl.ADBC;
 
 public class MyTest {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		IADB adbc = new ADBClient("localhost",5037);
+		IADB adbc = ADBC.getLocalClient(5037);
 		List<IDevice> list = adbc.devices();
-		for(IDevice device:list){
+		for (IDevice device : list) {
 			System.out.println(device.getSerialNumber());
 		}
 	}

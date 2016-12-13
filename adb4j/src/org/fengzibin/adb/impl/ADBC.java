@@ -6,30 +6,41 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.fengzibin.adb.IADB;
 import org.fengzibin.adb.IDevice;
+import org.fengzibin.adb.protocol.ICommands;
 import org.fengzibin.adb.util.Utility;
 
 /**
  * @author fengzibin
  */
-public final class ADBClient implements IADB {
+public final class ADBC implements IADB {
 
 	SocketAddress host;
+	Socket socket;
 	int timeout = 6000;
 
-	Socket socket = new Socket();;
+	public static IADB getNewClient(String ip, int port) {
+		return new ADBC(ip, port);
+	}
 
-	public ADBClient(String ip, int port) {
+	public static IADB getLocalClient(int port) {
+		return new ADBC("127.0.0.1", port);
+	}
+
+	private ADBC(String ip, int port) {
+		this.setHost(ip, port);
+	}
+
+	public void setHost(String ip, int port) {
 		this.host = new InetSocketAddress(ip, port);
 	}
 
 	@Override
 	public Result version() {
-		byte[] bytes = send("host:version");
+		byte[] bytes = send(ICommands.HOST_VERSION);
 		System.out.println(new String(bytes));
 		return null;
 	}
@@ -88,5 +99,4 @@ public final class ADBClient implements IADB {
 
 		return ret.toString().getBytes();
 	}
-
 }

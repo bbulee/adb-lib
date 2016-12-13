@@ -1,5 +1,6 @@
 package org.fengzibin.adb;
 
+import java.lang.reflect.Constructor;
 import java.util.List;
 
 /**
@@ -12,5 +13,4 @@ public interface IADB {
 	public IResult kill();
 
 	public List<IDevice> devices();
-
 }
