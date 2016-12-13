@@ -1,12 +1,13 @@
 package org.fengzibin.adb;
 
-import java.lang.reflect.Constructor;
 import java.util.List;
 
 /**
  * @author fengzibin
  */
 public interface IADB {
+
+	public void setHost(String hostIp, int port);
 
 	public IResult version();
 

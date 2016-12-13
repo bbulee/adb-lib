@@ -6,12 +6,12 @@ import java.util.List;
 
 import org.fengzibin.adb.IADB;
 import org.fengzibin.adb.IDevice;
-import org.fengzibin.adb.impl.ADBC;
+import org.fengzibin.adb.impl.ADBFactory;
 
 public class MyTest {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		IADB adbc = ADBC.getLocalClient(5037);
+		IADB adbc = ADBFactory.getLocalClient(5037);
 		List<IDevice> list = adbc.devices();
 		for (IDevice device : list) {
 			System.out.println(device.getSerialNumber());

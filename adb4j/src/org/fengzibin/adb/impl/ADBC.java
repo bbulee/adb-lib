@@ -22,18 +22,11 @@ public final class ADBC implements IADB {
 	Socket socket;
 	int timeout = 6000;
 
-	public static IADB getNewClient(String ip, int port) {
-		return new ADBC(ip, port);
-	}
-
-	public static IADB getLocalClient(int port) {
-		return new ADBC("127.0.0.1", port);
-	}
-
-	private ADBC(String ip, int port) {
+	protected ADBC(String ip, int port) {
 		this.setHost(ip, port);
 	}
 
+	@Override
 	public void setHost(String ip, int port) {
 		this.host = new InetSocketAddress(ip, port);
 	}
